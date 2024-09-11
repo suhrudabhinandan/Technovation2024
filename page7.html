@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Technovation</title>
+    <link href="https://fonts.cdnfonts.com/css/elianto" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/nasalization-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ailerons" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/stellar" rel="stylesheet">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Stellar', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .preloader .spinner {
+            border: 8px solid #1e1e1e;
+            border-top: 8px solid #ff6f61;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            position: relative;
+        }
+
+        /* Banner Image */
+        .banner {
+            flex: 1;
+            background: url('phed.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        /* Event Details */
+        .event-details {
+            flex: 2;
+        }
+
+        .event-details h1 {
+            font-size: 2.5rem;
+            color: #ff6f61;
+            font-family: 'Stellar', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .event-details p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Floating Register Button */
+        .btn-register {
+            background: linear-gradient(90deg, #061f34, #cec8c8);
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Elianto', sans-serif;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Video Section */
+        .video-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 2rem;
+            color: #ff6f61;
+            font-family: 'Ailerons', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <a href="#register" class="btn-register">Register Now</a>
+
+    <div class="container">
+        <div class="banner"></div>
+        <div class="event-details">
+            <h1>PHOTOSHOP EDITING</h1>
+            <p>Individual Participation.
+
+<p>Time Limit : 30 minutes.:</p>
+
+<p>Content for Photoshop will be provided on the spot.
+</p>
+
+<p>Judgment Criteria :</p>
+            <p> 1.Use of technology i.e. Editing, Graphics, Visuals etc.</p>
+               <p> 2.Theme of Editing / Perspective of the Participant.</p>
+              <p>  3.Final Theme Image must be in .PSD and .JPG format according to your choice resolution
+
+ </p>
+        </div>
+    </div>
+
+    <section class="video-section">
+        <h2>Event Overview</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dk8FOgIWqoI?si=B5gxt06Vu4kb3kPz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </section>
+
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('.preloader').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
