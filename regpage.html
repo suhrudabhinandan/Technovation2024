@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technovation Registration</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anurati&family=Blanka&family=Elianto&display=swap">
+    <style>
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff6f61;
+            font-family: 'Anurati', sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            font-family: 'Blanka', sans-serif;
+        }
+
+        input, textarea, select {
+            font-size: 1rem;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2e2e2e;
+            color: #ffffff;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: linear-gradient(90deg, #00aaff, #ff6f61);
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Elianto', sans-serif;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group-inline {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-group-inline .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group-inline .form-group:last-child {
+            margin-right: 0;
+        }
+
+        @media (max-width: 600px) {
+            .form-group-inline {
+                flex-direction: column;
+            }
+
+            .form-group-inline .form-group {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Technovation Registration</h1>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group-inline">
+                <div class="form-group">
+                    <label for="academic-year">Academic Year</label>
+                    <input type="text" id="academic-year" name="academic-year" required>
+                </div>
+                <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <input type="text" id="semester" name="semester" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="university-registration-number">University Registration Number</label>
+                <input type="text" id="university-registration-number" name="university-registration-number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone/WhatsApp Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="bi-number">BI Number</label>
+                <input type="text" id="bi-number" name="bi-number" required>
+            </div>
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="events">Select Events</label>
+                <select id="events" name="events[]" multiple required>
+                    <option value="event1">Event 1</option>
+                    <option value="event2">Event 2</option>
+                    <option value="event3">Event 3</option>
+                    <option value="event4">Event 4</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="excitement">Share Your Excitement</label>
+                <textarea id="excitement" name="excitement" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {};
+
+            formData.forEach((value, key) => {
+                if (!Reflect.has(data, key)) {
+                    data[key] = value;
+                    return;
+                }
+                if (!Array.isArray(data[key])) {
+                    data[key] = [data[key]];
+                }
+                data[key].push(value);
+            });
+
+            // This is where you would send the data to your server
+            // For demonstration purposes, we're logging it to the console
+            console.log(data);
+
+            alert('Registration successful!');
+
+            // Reset the form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
