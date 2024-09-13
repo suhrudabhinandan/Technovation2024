@@ -20,7 +20,7 @@
         }
 
         .overlay {
-            background: rgba(0, 0, 0, 0);
+            background: rgba(0, 0, 0, 0.7);
             position: absolute;
             top: 0;
             left: 0;
@@ -33,9 +33,9 @@
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 9px rgba(1, 1, 1, 0.9);
             position: relative;
         }
 
@@ -44,7 +44,7 @@
             color: #fff;
             font-family: 'Anurati', sans-serif;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         form {
@@ -63,21 +63,9 @@
             max-width: 60%;
         }
 
-        .form-header .photo-upload label {
-            display: inline-block;
-            width: 150px;
-            height: 150px;
-            background-color: #fff;
-            background-image: url('upload.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            line-height: 150px;
-            font-family: '', sans-serif;
-            color: #ffffff;
-            cursor: pointer;
-
+        .form-header .photo-upload {
+            width: 30%;
+            text-align: center;
         }
 
         .form-header .photo-upload input[type="file"] {
@@ -95,7 +83,7 @@
             background-repeat: no-repeat;
             border-radius: 10px;
             line-height: 150px;
-            font-family: '', sans-serif;
+            font-family: 'Stellar', sans-serif;
             color: #ffffff;
             cursor: pointer;
         }
@@ -180,78 +168,72 @@
     <div class="overlay"></div>
     <div class="container">
         <h1>Technovation Registration</h1>
-        <form id="registration-form" method="POST" action="https://script.google.com/macros/s/AKfycbzh7wU3i8jq7qHcsGJZnUr_nQ3M_T-KSCdkLQPP0WGg1BbKYCK6K0Lpx95tT0jVjsexOQ/exec" enctype="multipart/form-data">
+        <form id="registration-form" method="POST" action="save_registration.php" enctype="multipart/form-data">
             <div class="form-header">
                 <div class="event-info">
-                   <label for="name">Name *</label>
-
+                    <label for="name">Name</label>
                     <p><input type="text" id="name" name="name" required></p>
                     <div class="form-group-inline">
                         <div class="form-group">
-                            <label for="academic-year">Academic Year *</label>
-                            <input type="text" id="academic-year" name="academic-year" required>
+                            <label for="academic-year">Academic Year</label>
+                            <input type="text" id="academic-year" name="academic-year">
                         </div>
                         <div class="form-group">
-                            <label for="semester">Semester *</label>
+                            <label for="semester">Semester</label>
                             <input type="text" id="semester" name="semester" required>
                         </div>
                     </div>
                     <div class="form-group-inline">
                         <div class="form-group">
-                            <label for="university-reg">University Registration No. *</label>
-                            <input type="text" id="university-reg" name="university-reg" required>
+                            <label for="university-reg">University Registration No.</label>
+                            <input type="number" id="university-reg" name="university-reg" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Id *</label>
+                            <label for="email">Email</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                     </div>
                     <div class="form-group-inline">
                         <div class="form-group">
-                            <label for="phone">Phone/WhatsApp Number *</label>
+                            <label for="phone">Phone/WhatsApp Number</label>
                             <input type="tel" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="bi-number">BI Number *</label>
+                            <label for="bi-number">BI Number</label>
                             <input type="text" id="bi-number" name="bi-number" required>
                         </div>
                     </div>
                 </div>
-            <div class="event-info"> 
-                <label for="name">Upload Image *</label>
-                <div class="photo-upload">
-                    
-                    <p><label for="photo-upload"></label></p>
-                    <input type="file" id="photo-upload" name="photo-upload" required>
+                <div class="event-info">
+                    <label for="name">Upload Image</label>
+                    <div class="photo-upload">
+                        <p><label for="photo-upload"></label></p>
+                        <input type="file" id="photo-upload" name="photo-upload" required>
+                    </div>
                 </div>
-
-            </div>
             </div>
             <div class="form-group">
-                <label for="events">Select Events *</label>
+                <label for="events">Select Events</label>
                 <div class="checkbox-group">
-                <div class="checkbox">
-                    <p><label><input type="checkbox" name="events[]" value="event1"> Event 1</label></p>
-
-                    <p><label><input type="checkbox" name="events[]" value="event2"> Event 2</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event3"> Event 3</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event4"> Event 4</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event5"> Event 5</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event6"> Event 6</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event7"> Event 7</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event8"> Event 8</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event9"> Event 9</label></p>
-                 </div>
-                 </div>
+                    <div class="checkbox">
+                        <p><label><input type="checkbox" name="events[]" value="event1"> Event 1</label></p>
+                        <p><label><input type="checkbox" name="events[]" value="event2"> Event 2</label></p>
+                        <p><label><input type="checkbox" name="events[]" value="event3"> Event 3</label></p>
+                        <p><label><input type="checkbox" name="events[]" value="event4"> Event 4</label></p>
+                        <p><label><input type="checkbox" name="events[]" value="event5"> Event 5</label></p>
+                        <p><label><input type="checkbox" name="events[]" value="event6"> Event 6</label></p>
+                        <p><label><input type="checkbox" name="events[]" value="event7"> Event 7</label></p>
+                        <p><label><input type="checkbox" name="events[]" value="event8"> Event 8</label></p>
+                        <p><label><input type="checkbox" name="events[]" value="event9"> Event 9</label></p>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="excitement">Share Your Excitement</label>
-                <textarea id="excitement" name="excitement" rows="4" ></textarea>
+                <textarea id="excitement" name="excitement" rows="4"></textarea>
             </div>
             <button type="submit" class="btn-submit">Register</button>
         </form>
     </div>
-    
-
 </body>
 </html>

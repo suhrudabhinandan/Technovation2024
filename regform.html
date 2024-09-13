@@ -180,7 +180,7 @@
     <div class="overlay"></div>
     <div class="container">
         <h1>Technovation Registration</h1>
-        <form id="registration-form" method="POST" action="https://script.google.com/macros/s/AKfycbzh7wU3i8jq7qHcsGJZnUr_nQ3M_T-KSCdkLQPP0WGg1BbKYCK6K0Lpx95tT0jVjsexOQ/exec" enctype="multipart/form-data">
+        <form id="registration-form" name="submit-to-google-sheet" method="POST" action="regdint.php" enctype="multipart/form-data">
             <div class="form-header">
                 <div class="event-info">
                    <label for="name">Name *</label>
@@ -199,7 +199,7 @@
                     <div class="form-group-inline">
                         <div class="form-group">
                             <label for="university-reg">University Registration No. *</label>
-                            <input type="text" id="university-reg" name="university-reg" required>
+                            <input type="number" id="university-reg" name="university-reg" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Id *</label>
@@ -251,7 +251,16 @@
             <button type="submit" class="btn-submit">Register</button>
         </form>
     </div>
-    
-
+    <script>
+        const scriptURL = '<SCRIPT URL>'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>

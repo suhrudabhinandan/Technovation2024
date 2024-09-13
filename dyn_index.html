@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technovation - College Event</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="theme.css">
     <link href="https://fonts.cdnfonts.com/css/elianto" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/nasalization-2" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/ailerons" rel="stylesheet">
@@ -21,7 +21,7 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="logo.png" class="logo">Technovation</a>
+                <a href="#" class="logo">Technovation</a>
                 <ul class="nav-menu">
                     <li><a href="#about">About</a></li>
                     <li><a href="#speakers">Speakers</a></li>
@@ -31,6 +31,14 @@
                 </ul>
                 <a href="https://forms.fillout.com/t/mb9rETWfGSus" class="btn-register">Register Now</a>
             </nav>
+            <!-- Toggle Button for Dark Mode -->
+            <div class="toggle-container">
+            <input type="checkbox" id="toggle-dark-mode" class="toggle-checkbox">
+            <label for="toggle-dark-mode" class="toggle-label">
+            <span class="toggle-ball"></span>
+            </label>
+            </div>
+
             <div class="hero-slider">
                 <div class="slide">
                     <img src="cinematic-scene-big-space-cruiser-shuttle (1).jpg" alt="Banner 1">
@@ -231,30 +239,9 @@
             <div class="credits">
                 <p>Developed by: Suhrud Abhinandan | Manish Behera </p>
             </div>
-            <div class="stats-card">
-                <h3>Visitors Today</h3>
-                <p id="visitorsToday">0</p>
-                <div class="stats-data">
-                    <div>
-                        <h4>Yesterday</h4>
-                        <p id="visitorsYesterday">0</p>
-                    </div>
-                    <div>
-                        <h4>Last Week</h4>
-                        <p id="visitorsLastWeek">0</p>
-                    </div>
-                    <div>
-                        <h4>This Month</h4>
-                        <p id="visitorsThisMonth">0</p>
-                    </div>
-                    <div>
-                        <h4>Last Month</h4>
-                        <p id="visitorsLastMonth">0</p>
-                    </div>
-                </div>
-                <canvas id="visitorsChart"></canvas>
+            <div class="visitor-counter">
+                Visitor Count: <span id="visitor-count"></span>  
             </div>
-            
         </div>
     </footer>
 
@@ -287,92 +274,22 @@
 
         showSlides(); // Initial call
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
-        // Helper function to get today's date string
-        function getToday() {
-            const today = new Date();
-            return today.toISOString().split('T')[0]; // YYYY-MM-DD format
-        }
-    
-        function getMonth() {
-            const today = new Date();
-            return today.getFullYear() + '-' + (today.getMonth() + 1); // YYYY-MM format
-        }
-    
-        // Fetch stored data from localStorage or initialize it
-        let storedData = JSON.parse(localStorage.getItem('visitorData')) || {
-            today: 0,
-            yesterday: 0,
-            lastWeek: 0,
-            thisMonth: 0,
-            lastMonth: 0,
-            visitHistory: [], // stores daily visit count for graph
-            lastVisitDate: '',
-            currentMonth: ''
-        };
-    
-        const todayDate = getToday();
-        const currentMonth = getMonth();
-    
-        // If a new day has started, reset the "today" counter and update "yesterday"
-        if (storedData.lastVisitDate !== todayDate) {
-            storedData.yesterday = storedData.today;
-            storedData.today = 0; // Reset today's count
-            storedData.lastVisitDate = todayDate;
-        }
-    
-        // If a new month has started, reset the monthly counters
-        if (storedData.currentMonth !== currentMonth) {
-            storedData.lastMonth = storedData.thisMonth;
-            storedData.thisMonth = 0;
-            storedData.currentMonth = currentMonth;
-        }
-    
-        // Increment the visitor counts
-        storedData.today++;
-        storedData.thisMonth++;
-    
-        // Update the localStorage with the new data
-        localStorage.setItem('visitorData', JSON.stringify(storedData));
-    
-        // Update the HTML with the latest data
-        document.getElementById('visitorsToday').textContent = storedData.today;
-        document.getElementById('visitorsYesterday').textContent = storedData.yesterday;
-        document.getElementById('visitorsThisMonth').textContent = storedData.thisMonth.toLocaleString();
-        document.getElementById('visitorsLastMonth').textContent = storedData.lastMonth.toLocaleString();
-        document.getElementById('visitorsLastWeek').textContent = storedData.lastWeek.toLocaleString(); // Placeholder for weekly update
-    
-        // Update visitor history for graph (up to 7 days for a weekly view)
-        if (storedData.visitHistory.length >= 7) {
-            storedData.visitHistory.shift(); // Keep the array size to 7 days
-        }
-        storedData.visitHistory.push(storedData.today);
-        localStorage.setItem('visitorData', JSON.stringify(storedData));
-    
-        // Render the chart using Chart.js
-        var ctx = document.getElementById('visitorsChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                    label: 'Visitors',
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    data: storedData.visitHistory
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+    // Dark Mode Toggle
+    const toggleSwitch = document.getElementById('toggle-dark-mode');
+    toggleSwitch.addEventListener('change', function() {
+        document.body.classList.toggle('dark-mode', this.checked);
+    });
     </script>
-    
+
+    <script>
+        // Visitor Counter
+        let count = localStorage.getItem('visitorCount') || 0;
+        count++;
+        localStorage.setItem('visitorCount', count);
+        document.getElementById('visitor-count').innerText = count;
+    </script>
    
 
 

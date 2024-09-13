@@ -77,27 +77,10 @@
             font-family: '', sans-serif;
             color: #ffffff;
             cursor: pointer;
-
         }
 
         .form-header .photo-upload input[type="file"] {
             display: none;
-        }
-
-        .form-header .photo-upload label {
-            display: inline-block;
-            width: 150px;
-            height: 150px;
-            background-color: #fff;
-            background-image: url('upload.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            line-height: 150px;
-            font-family: '', sans-serif;
-            color: #ffffff;
-            cursor: pointer;
         }
 
         label {
@@ -180,12 +163,11 @@
     <div class="overlay"></div>
     <div class="container">
         <h1>Technovation Registration</h1>
-        <form id="registration-form" method="POST" action="https://script.google.com/macros/s/AKfycbzh7wU3i8jq7qHcsGJZnUr_nQ3M_T-KSCdkLQPP0WGg1BbKYCK6K0Lpx95tT0jVjsexOQ/exec" enctype="multipart/form-data">
+        <form id="registration-form" method="POST" action="https://script.google.com/macros/s/AKfycbx-yE37QGyZ9-HHTks3JNJD71lrQWo8jfet13Tz-8dTOs1N72y7jET9EMfXO7VAyRFdvA/exec" enctype="multipart/form-data">
             <div class="form-header">
                 <div class="event-info">
-                   <label for="name">Name *</label>
-
-                    <p><input type="text" id="name" name="name" required></p>
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
                     <div class="form-group-inline">
                         <div class="form-group">
                             <label for="academic-year">Academic Year *</label>
@@ -199,7 +181,7 @@
                     <div class="form-group-inline">
                         <div class="form-group">
                             <label for="university-reg">University Registration No. *</label>
-                            <input type="text" id="university-reg" name="university-reg" required>
+                            <input type="number" id="university-reg" name="university-reg" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Id *</label>
@@ -217,41 +199,34 @@
                         </div>
                     </div>
                 </div>
-            <div class="event-info"> 
-                <label for="name">Upload Image *</label>
-                <div class="photo-upload">
-                    
-                    <p><label for="photo-upload"></label></p>
-                    <input type="file" id="photo-upload" name="photo-upload" required>
+                <div class="event-info">
+                    <label for="photo-upload">Upload Image *</label>
+                    <div class="photo-upload">
+                        <input type="file" id="photo-upload" name="photo-upload" required>
+                    </div>
                 </div>
-
-            </div>
             </div>
             <div class="form-group">
                 <label for="events">Select Events *</label>
                 <div class="checkbox-group">
-                <div class="checkbox">
-                    <p><label><input type="checkbox" name="events[]" value="event1"> Event 1</label></p>
-
-                    <p><label><input type="checkbox" name="events[]" value="event2"> Event 2</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event3"> Event 3</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event4"> Event 4</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event5"> Event 5</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event6"> Event 6</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event7"> Event 7</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event8"> Event 8</label></p>
-                    <p><label><input type="checkbox" name="events[]" value="event9"> Event 9</label></p>
-                 </div>
-                 </div>
+                    <label><input type="checkbox" name="events[]" value="event1"> Event 1</label>
+                    <label><input type="checkbox" name="events[]" value="event2"> Event 2</label>
+                    <label><input type="checkbox" name="events[]" value="event3"> Event 3</label>
+                    <label><input type="checkbox" name="events[]" value="event4"> Event 4</label>
+                    <label><input type="checkbox" name="events[]" value="event5"> Event 5</label>
+                    <label><input type="checkbox" name="events[]" value="event6"> Event 6</label>
+                    <label><input type="checkbox" name="events[]" value="event7"> Event 7</label>
+                    <label><input type="checkbox" name="events[]" value="event8"> Event 8</label>
+                    <label><input type="checkbox" name="events[]" value="event9"> Event 9</label>
+                </div>
             </div>
             <div class="form-group">
                 <label for="excitement">Share Your Excitement</label>
-                <textarea id="excitement" name="excitement" rows="4" ></textarea>
+                <textarea id="excitement" name="excitement" rows="4"></textarea>
             </div>
             <button type="submit" class="btn-submit">Register</button>
         </form>
     </div>
-    
-
 </body>
 </html>
+

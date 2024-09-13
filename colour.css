@@ -8,10 +8,18 @@
 /* Body Styling */
 body {
     font-family: 'Elianto', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Dark text */
     line-height: 1.6;
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #f0f0f0; /* Lighter background for dark mode */
+    color: #000000; /* Dark text for dark mode */
+}
+
+/* Adjust other elements for light mode as needed */
 
 /* Container */
 .container {
@@ -23,7 +31,7 @@ body {
 
 /* Header */
 .header {
-    background-color: #1e1e1e;
+    background-color: #ffffff; /* Light background */
     padding: 20px 0;
     text-align: center;
     position: relative;
@@ -37,24 +45,15 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-   
 }
 
 .logo {
     font-size: 2rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #000000; /* Dark text */
     text-decoration: none;
     font-family: 'Nasalization', sans-serif;
-    text-shadow:
-    0 0 7px #ffffffa9,
-    0 0 10px #ffffffb5,
-    0 0 21px #ffffffbb,
-    0 0 42px #ffd900c9,
-    0 0 82px #ffd900c9,
-    0 0 92px #ffffffc9,
-    0 0 102px #ffffffd0,
-    0 0 151px #fff;
+    text-shadow: none;
 }
 
 .nav-menu {
@@ -62,32 +61,26 @@ body {
     display: flex;
     gap: 20px;
     font-family: 'Ailerons', sans-serif;
-    
-    
-    
 }
 
 .nav-menu li {
     display: inline;
     font-family: 'Ailerons', sans-serif;
-   
 }
 
 .nav-menu a {
-    color: #ffffff;
+    color: #000000; /* Dark text */
     text-decoration: none;
     font-family: 'Stellar', sans-serif;
     font-weight: 600;
-    
 }
 
 .btn-register {
-    background: linear-gradient(270deg, #061f34, #cec8c8);
-    color: #ffffff;
+    background: linear-gradient(230deg, #fbff00, #ffa600);    color: #000000; /* Dark text */
     padding: 6px 20px;
     border-radius: 25px;
     text-decoration: none;
-    font-family: 'Elianto' sans-serif ;
+    font-family: 'Elianto', sans-serif;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -124,7 +117,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #ffffff;
+    color: #000000; /* Dark text */
 }
 
 .hero-content h1 {
@@ -139,8 +132,7 @@ body {
 }
 
 .btn-cta {
-    background: linear-gradient(90deg, #061f34, #ffffff);
-    color: #ffffff;
+    background: linear-gradient(230deg, #fbff00, #ffa600);    color: #000000; /* Dark text */
     padding: 15px 30px;
     border-radius: 25px;
     text-decoration: none;
@@ -157,20 +149,17 @@ body {
 
 /* About Section */
 .about-section {
-    background-color: #1e1e1e;
+    background-color: #ffffff; /* Light background */
     padding: 40px 0;
     text-align: center;
-    
 }
 
 .about-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    background: linear-gradient(75deg, #061f34, #ffffff);
-    border-radius: 10px;
-    color:#ffffff;
+    background: linear-gradient(230deg, #fbff00, #ffa600);    border-radius: 10px;
+    color: #000000; /* Dark text */
     font-family: 'Ailerons', sans-serif;
-    
 }
 
 .about-section p {
@@ -179,7 +168,7 @@ body {
 
 /* Speakers Section */
 .speakers-section {
-    background-color: #2e2e2e;
+    background-color: #ffffff; /* Light background */
     padding: 40px 0;
     text-align: center;
 }
@@ -187,9 +176,8 @@ body {
 .speakers-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color:#ffffff;
-    background: linear-gradient(178deg, #061f34, #ffffff);
-    font-family: 'Ailerons', sans-serif;
+    color: #000000; /* Dark text */
+    background: linear-gradient(230deg, #fbff00, #ffa600);    font-family: 'Ailerons', sans-serif;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -202,7 +190,7 @@ body {
 }
 
 .speaker-card {
-    background-color: #333333;
+    background-color: #ffffff; /* Light background */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -220,47 +208,29 @@ body {
 }
 
 .btn-event {
-    background: linear-gradient(270deg, #061f34, #cec8c8);
-    color: #ffffff;
+    background: linear-gradient(230deg, #fbff00, #ffa600);    color: #000000; /* Dark text */
     padding: 6px 20px;
     border-radius: 25px;
     text-decoration: none;
-    font-family: 'Elianto' sans-serif ;
+    font-family: 'Elianto', sans-serif;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
-.btn-event {
-    background: linear-gradient(270deg, #061f34, #cec8c8);
-    color: #ffffff;
-    padding: 6px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: 'Elianto' sans-serif ;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-.btn-event {
-    background: linear-gradient(270deg, #061f34, #cec8c8);
-    color: #ffffff;
-    padding: 6px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: 'Elianto' sans-serif ;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
+
 .speaker-card h3 {
     font-size: 1.5rem;
     margin: 10px 0;
-    color: #ff6f61;
+    color: #ff6f61; /* Accent color */
     font-family: 'Stellar', sans-serif;
 }
 
 .speaker-card p {
     font-size: 1rem;
-    color: #cccccc;
+    color: #000000; /* Dark text */
 }
 
 /* Schedule Section */
 .schedule-section {
-    background-color: #1e1e1e;
+    background-color: #ffffff; /* Light background */
     padding: 40px 0;
     text-align: center;
 }
@@ -268,21 +238,11 @@ body {
 .schedule-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ff6f61;
-    text-shadow:
-      0 0 7px #ffffffa9,
-      0 0 10px #ffffffb5,
-      0 0 21px #ffffffbb,
-      0 0 42px rgba(255, 255, 255, 0.788),
-      0 0 82px #f8f8f8ce,
-      0 0 92px #ffffffcb,
-      0 0 102px #ffffffd0,
-      0 0 151px #fff;
-    background: linear-gradient(230deg, hsl(52, 100%, 48%), #ffffff);
+    color: #ff6f61; /* Accent color */
+    background: linear-gradient(230deg, #fbff00, #ffa600); /* Lighter gradient */
     font-family: 'Ailerons', sans-serif;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
 }
 
 table {
@@ -294,23 +254,23 @@ table {
 
 th, td {
     padding: 10px;
-    border: 1px solid #444444;
+    border: 1px solid #dddddd; /* Lighter border */
     text-align: left;
 }
 
 th {
-    background-color: #333333;
-    color: #ff6f61;
+    background-color: #f0f0f0; /* Light background */
+    color: #ff6f61; /* Accent color */
 }
 
 td {
-    background-color: #2e2e2e;
-    color: #cccccc;
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Dark text */
 }
 
 /* Sponsors Section */
 .sponsors-section {
-    background-color: #2e2e2e;
+    background-color: #ffffff; /* Light background */
     padding: 40px 0;
     text-align: center;
 }
@@ -318,15 +278,13 @@ td {
 .sponsors-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ff6f61;
-    background: linear-gradient(75deg, #ffffff00, #ffffff00);
-    
-    
+    color: #ff6f61; /* Accent color */
+    background: linear-gradient(75deg, #ffffff, #f0f0f0); /* Lighter gradient */
     font-family: 'Ailerons', sans-serif;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-stroke-color: #000000; /* Dark stroke color */
 }
 
 .sponsor-logos {
@@ -347,7 +305,7 @@ td {
 
 /* Contact Section */
 .contact-section {
-    background-color: #1e1e1e;
+    background-color: #ffffff; /* Light background */
     padding: 40px 0;
     text-align: center;
 }
@@ -355,44 +313,27 @@ td {
 .contact-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ff6f61;
-    background: linear-gradient(255deg, #061f34, #ffffff);
-    text-shadow:
-    0 0 7px #ffffffa9,
-    0 0 10px #ffffffb5,
-    0 0 21px #ffffffbb,
-    0 0 42px #ffffffc9,
-    0 0 82px #ff00d0de,
-    0 0 92px #ff00f7fe,
-    0 0 102px #ec71ea,
-    0 0 151px #ff00ee;
+    color: #ff6f61; /* Accent color */
+    background: linear-gradient(255deg, #ffffff, #f0f0f0); /* Lighter gradient */
+    text-shadow: none;
     font-family: 'Ailerons', sans-serif;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .contact-section p {
     font-size: 1.2rem;
 }
+
 /* FAQs Section */
 .faqs-section {
-    background-color: #222222;
+    background-color: #f0f0f0; /* Light background */
     text-align: center;
 }
 
 .faqs-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #fdfdfd;
-    text-shadow:
-    0 0 7px #ffffffa5,
-    0 0 10px #ffffff97,
-    0 0 21px #ffffffa2,
-    0 0 42px #ffffffbb,
-    0 0 82px #2a91db,
-    0 0 92px #2a91db,
-    0 0 102px #2a91db,
-    0 0 151px #2a91db;
+    color: #000000; /* Dark text */
+    text-shadow: none;
     font-family: 'Ailerons', sans-serif;
 }
 
@@ -403,7 +344,7 @@ td {
 }
 
 .faq {
-    background-color: #2e2e2e;
+    background-color: #ffffff; /* Light background */
     padding: 20px;
     border-radius: 10px;
     text-align: left;
@@ -411,54 +352,23 @@ td {
 
 .faq h3 {
     font-size: 1.5rem;
-    color: #ff6f61;
+    color: #ff6f61; /* Accent color */
     margin-bottom: 10px;
     font-family: 'Stellar', sans-serif;
-    
 }
 
 .faq p {
     font-size: 1rem;
+    color: #000000; /* Dark text */
 }
-
 
 /* Footer */
 .footer {
-    background-color: #1e1e1e;
+    background-color: #ffffff; /* Light background */
     padding: 20px 0;
     text-align: center;
     position: relative;
 }
-.stats-card {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    margin: 20px;
-}
-
-.stats-card h3, .stats-card h4 {
-    margin: 0;
-    font-weight: 400;
-}
-
-.stats-data {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.stats-data div {
-    text-align: center;
-}
-
-#visitorsChart {
-    width: 100%;
-    height: 100px;
-}
-
-
 
 /* Credits Section */
 .credits {
@@ -466,14 +376,10 @@ td {
     bottom: 20px;
     right: 20px;
     font-size: 1.1rem;
-    color: #ff6f61;
+    color: #ff6f61; /* Accent color */
     font-family: 'Nasalization', sans-serif;
-    background: linear-gradient(90deg, #ffffff, #ffffff);
-    text-shadow:
-    0 0 7px #ffffffa5,
-    0 0 10px #ffffff97;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #ffffff, #f0f0f0); /* Lighter gradient */
+    text-shadow: none;
 }
 
 /* Floating and Popping Out Buttons */
@@ -490,7 +396,7 @@ td {
     width: 100%;
     height: 100%;
     border-radius: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
     transition: transform 0.3s ease;
 }
 
@@ -521,8 +427,8 @@ td {
     }
 }
 
-#pre-loader{
-    background: #292b38 url(loader.gif) no-repeat center center;
+#pre-loader {
+    background: #ffffff url(loader.gif) no-repeat center center; /* Light background */
     background-size: 10%;
     height: 100vh;
     width: 100%;
@@ -532,8 +438,59 @@ td {
 
 /* Add this to your existing styles.css file */
 
+/* Visitor Counter Styles */
+.visitor-counter {
+    font-family: 'Stellar', sans-serif;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.5); /* Lighter background */
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
 
+/* Toggle Button Styles */
+.toggle-container {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    margin: 20px;
+}
 
-    
+.toggle-checkbox {
+    display: none;
+}
 
+.toggle-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0; /* Light background */
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
 
+.toggle-ball {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    background-image: url('sun.png'); /* Replace with your sun icon */
+    background-size: cover;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #b0b0b0; /* Darker background */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(40px);
+    background-image: url('moon.png'); /* Replace with your moon icon */
+    background-size: cover;
+}
