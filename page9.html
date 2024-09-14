@@ -23,6 +23,7 @@
             background-color: #121212;
             color: #ffffff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         /* Preloader */
@@ -39,28 +40,97 @@
             z-index: 9999;
         }
 
-        .preloader .spinner {
-            border: 8px solid #1e1e1e;
-            border-top: 8px solid #ff6f61;
+        .loader {
+            width: 48px;
+            height: 48px;
+            margin: auto;
+            position: relative;
+        }
+        
+        .loader:before {
+            content: '';
+            width: 48px;
+            height: 5px;
+            background: #000;
+            opacity: 0.25;
+            position: absolute;
+            top: 60px;
+            left: 0;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
+            animation: shadow 0.5s linear infinite;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .loader:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            animation: bxSpin 0.5s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 4px;
+        }
+
+        @keyframes bxSpin {
+            17% {
+                border-bottom-right-radius: 3px;
+            }
+            25% {
+                transform: translateY(9px) rotate(22.5deg);
+            }
+            50% {
+                transform: translateY(18px) scale(1, .9) rotate(45deg);
+                border-bottom-right-radius: 40px;
+            }
+            75% {
+                transform: translateY(9px) rotate(67.5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(90deg);
+            }
+        }
+
+        @keyframes shadow {
+            0%, 100% {
+                transform: scale(1, 1);
+            }
+            50% {
+                transform: scale(1.2, 1);
+            }
+        }
+
+        /* Video Background */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-bg video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Container */
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
             display: flex;
             position: relative;
+            background: rgba(0, 0, 0, 0.6); /* To ensure readability over the video */
+            border-radius: 10px;
+            z-index: 1; /* Ensure container is above video background */
         }
 
         /* Banner Image */
@@ -98,11 +168,11 @@
             border-radius: 25px;
             text-decoration: none;
             font-family: 'Elianto', sans-serif;
-            position: absolute;
-            top: 20px;
+            position: fixed;
+            top: 10px;
             right: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 1;
+            z-index: 2; /* Ensure button is above video background */
         }
 
         .btn-register:hover {
@@ -114,6 +184,7 @@
         .video-section {
             margin-top: 40px;
             text-align: center;
+            z-index: 1; /* Ensure video section is above video background */
         }
 
         .video-section h2 {
@@ -128,13 +199,39 @@
             max-width: 800px;
             height: 450px;
             border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .vtext {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ff6f61;
+            font-family: 'Ailerons', sans-serif;
+            width: 90%;
+            max-width: 1200px;   
+            margin: 10px auto;
+            margin-top: 10%;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6); /* To ensure readability over the video */
+            border-radius: 10px;
+            flex-direction: column;
         }
     </style>
 </head>
 <body>
 
     <div class="preloader">
-        <div class="spinner"></div>
+        <div class="loader"></div>
+    </div>
+
+    <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="building1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <a href="https://forms.fillout.com/t/mb9rETWfGSus" class="btn-register">Register Now</a>
@@ -143,26 +240,23 @@
         <div class="banner"></div>
         <div class="event-details">
             <h1>BUSINESS IDEAS</h1>
-            <p>Maximum Team Size: 4 (Four members)
-
-<p>Guidelines:</p>
-
-<p>Maximum Time Limit: 10 minutes.</p>
-
-
-<p>Judgment Criteria:</p>
-
-    <p>*Area of Implementation.</p>
-    <p>*Future Scope.</p>
-    <p>*Presentation.</p>
-    <p>*Justification of Idea.
-
- </p>
+            <p>Maximum Team Size: 4 (Four members)</p>
+            <p>Guidelines:</p>
+            <p>Maximum Time Limit: 10 minutes.</p>
+            <p>Judgment Criteria:</p>
+            <p>* Area of Implementation.</p>
+            <p>* Future Scope.</p>
+            <p>* Presentation.</p>
+            <p>* Justification of Idea.</p>
         </div>
     </div>
 
-    <section class="video-section">
+    <section class="vtext">
         <h2>Event Overview</h2>
+    </section>
+    
+    <section class="video-section">
+        <h2></h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/q6W0IxAnz4o?si=ess1PiuN7JToTX88" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
 

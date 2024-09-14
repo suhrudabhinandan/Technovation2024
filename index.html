@@ -16,12 +16,16 @@
 </head>
 <body>
 
-    <div class="pre-loader"></div>
+    <div class="pre-loader">
+        <span class="loader"></span>
+    </div>
+    
 
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="logo.png" class="logo">Technovation</a>
+                <a href="logo1.png" class="logo">Technovation</a>
+                
                 <ul class="nav-menu">
                     <li><a href="#about">About</a></li>
                     <li><a href="#speakers">Speakers</a></li>
@@ -115,8 +119,8 @@
                 </div>
                 <div class="speaker-card">
                     <img src="gd.jpg" alt="Event 5">
-                    <h3>‎GROUP DISCUSSION‎</h3>
-                    <a href="page4.html#register" class="btn-event">More</a>
+                    <h3>GROUP DISCUSSION</h3>
+                    <a href="page5.html#register" class="btn-event">More</a>
                     <p></p>
                 </div>
                 <div class="speaker-card">
@@ -259,14 +263,15 @@
     </footer>
 
     <script>
-        var loader = document.getElementById("pre-loader");
-
-        window.addEventListner("load", function() {
+        var loader = document.querySelector(".pre-loader");
+    
+        window.addEventListener("load", function() {
             setTimeout(function () {
                 loader.style.display = "none";
             }, 1500);
         });
     </script>
+    
 
     <script>
         // JavaScript for Smooth Sliding Banner
@@ -372,6 +377,7 @@
             }
         });
     </script>
+    
     
    
 
