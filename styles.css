@@ -161,6 +161,7 @@ body {
     .hero-content {
         top: 60%; /* Adjust vertical centering for mobile */
         left: 50%;
+        font-size: 1rem;
         transform: translate(-50%, -60%);
         padding: 0 10px; /* Reduce padding */
     }
