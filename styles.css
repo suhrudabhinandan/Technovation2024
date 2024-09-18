@@ -181,24 +181,27 @@ body {
 
 @media (max-width: 480px) {
     .hero-slider {
-        height: 200px; /* Further adjust height for very small screens */
+        height: 300px; /* Adjust height for smaller screens */
     }
 
     .hero-content {
-        top: 70%; /* Further adjust vertical centering */
-        padding: 0 5px; /* Further reduce padding */
+        top: 60%; /* Adjust vertical centering for mobile */
+        left: 50%;
+        font-size: 1rem;
+        transform: translate(-50%, -60%);
+        padding: 0 10px; /* Reduce padding */
     }
 
     .hero-content h1 {
-        font-size: 1.5rem; /* Further reduce font size */
+        font-size: .3rem; /* Reduce font size */
     }
 
     .hero-content p {
-        font-size: 0.9rem; /* Further reduce font size */
+        font-size: .1rem; /* Reduce font size */
     }
 
     .btn-cta {
-        padding: 8px 16px; /* Further reduce padding */
+        padding: 4px 8px; /* Reduce padding */
     }
 }
 
@@ -311,21 +314,27 @@ body {
 }
 
 @media (max-width: 480px) {
+    .speaker-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .speaker-card {
-        max-width: 150px;
-        max-height: 150px;
+        margin-bottom: 30px;
+        max-width: 200px;
+        max-height: 200px;
     }
 
     .speaker-card img {
-        width: 70%;
+        width: 60%;
     }
 
     .speaker-card h3 {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     .speaker-card p {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 }
 
