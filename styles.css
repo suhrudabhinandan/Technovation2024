@@ -296,8 +296,8 @@ body {
 
     .speaker-card {
         margin-bottom: 30px;
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 300px;
+        max-height: 300px;
     }
 
     .speaker-card img {
@@ -310,6 +310,7 @@ body {
 
     .speaker-card p {
         font-size: 0.8rem;
+        margin-top: 5px;
     }
 }
 
@@ -321,8 +322,8 @@ body {
 
     .speaker-card {
         margin-bottom: 30px;
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 300px;
+        max-height: 300px;
     }
 
     .speaker-card img {
