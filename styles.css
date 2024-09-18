@@ -193,11 +193,11 @@ body {
     }
 
     .hero-content h1 {
-        font-size: .3rem; /* Reduce font size */
+        font-size: 1rem; /* Reduce font size */
     }
 
     .hero-content p {
-        font-size: .1rem; /* Reduce font size */
+        font-size: .75rem; /* Reduce font size */
     }
 
     .btn-cta {
@@ -335,6 +335,7 @@ body {
 
     .speaker-card p {
         font-size: 0.8rem;
+        margin-top: 5px;
     }
 }
 
