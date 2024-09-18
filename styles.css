@@ -166,15 +166,15 @@ body {
     }
 
     .hero-content h1 {
-        font-size: 1rem; /* Reduce font size */
+        font-size: .75rem; /* Reduce font size */
     }
 
     .hero-content p {
-        font-size: .5rem; /* Reduce font size */
+        font-size: .4rem; /* Reduce font size */
     }
 
     .btn-cta {
-        padding: 5px 10px; /* Reduce padding */
+        padding: 4px 8px; /* Reduce padding */
     }
 }
 
