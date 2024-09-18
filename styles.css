@@ -373,8 +373,8 @@ body {
 
     .speaker-card {
         margin-bottom: 30px;
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 180px;
+        max-height: 180px;
     }
 
     .speaker-card img {
