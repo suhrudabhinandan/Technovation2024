@@ -159,7 +159,7 @@ body {
     }
 
     .hero-content {
-        top: 60%; /* Adjust vertical centering for mobile */
+        top: 30%; /* Adjust vertical centering for mobile */
         left: 50%;
         transform: translate(-50%, -60%);
         padding: 0 10px; /* Reduce padding */
