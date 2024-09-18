@@ -167,11 +167,11 @@ body {
     }
 
     .hero-content h1 {
-        font-size: .75rem; /* Reduce font size */
+        font-size: .3rem; /* Reduce font size */
     }
 
     .hero-content p {
-        font-size: .45rem; /* Reduce font size */
+        font-size: .1rem; /* Reduce font size */
     }
 
     .btn-cta {
