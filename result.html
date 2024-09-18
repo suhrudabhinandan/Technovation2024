@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/ailerons" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/jumbotron" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/dungeon-depths?styles=170998" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Nabla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">                
+    <title>Results Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            margin: auto;
+            position: relative;
+        }
+        
+        .loader:before {
+            content: '';
+            width: 48px;
+            height: 5px;
+            background: #000;
+            opacity: 0.25;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            border-radius: 50%;
+            animation: shadow 0.5s linear infinite;
+        }
+
+        .loader:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            animation: bxSpin 0.5s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 4px;
+        }
+
+        @keyframes bxSpin {
+            17% {
+                border-bottom-right-radius: 3px;
+            }
+            25% {
+                transform: translateY(9px) rotate(22.5deg);
+            }
+            50% {
+                transform: translateY(18px) scale(1, .9) rotate(45deg);
+                border-bottom-right-radius: 40px;
+            }
+            75% {
+                transform: translateY(9px) rotate(67.5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(90deg);
+            }
+        }
+
+        @keyframes shadow {
+            0%, 100% {
+                transform: scale(1, 1);
+            }
+            50% {
+                transform: scale(1.2, 1);
+            }
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            z-index: 1;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            font-family: 'Ailerons', sans-serif;
+            padding: 20px;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-container input {
+            padding: 10px;
+            width: 200px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-family: 'Ailerons', sans-serif;
+        }
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+        .card {
+            width: 30%;
+            margin: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            transform: perspective(1000px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .card.highlight {
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 15px #FFD700;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .card img, .card video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card-content {
+            padding: 15px;
+            font-family: 'Dungeon-Depths', sans-serif;
+            text-align: center;
+        }
+        .card h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .card p {
+            margin: 10px 0 0;
+            font-size: 1em;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                width: 90%;
+            }
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.674);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+            z-index: 1000;
+            width: 80%;
+            max-width: 500px;
+            padding: 20px;
+            text-align: center;
+            
+        }
+        .popup img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .popup h3 {
+            margin-top: 15px;
+            font-size: 1.5em;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+        }
+        .popup p {
+            font-size: 1.2em;
+            font-family: 'Nabla', Arial, Helvetica, sans-serif;
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff5c5c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" src="Graphics/result.mp4" autoplay muted loop></video>
+
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <div class="header">Results</div>
+    
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for an event...">
+        <button onclick="searchEvent()">Search</button>
+    </div>
+
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card" onclick="openPopup(1)">
+            <img src="Graphics/rebreak.jpg" alt="Event 1">
+            <div class="card-content">
+                <h3>Break The Query</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="openPopup(2)">
+            <img src="Graphics/recode.jpg" alt="Event 2">
+            <div class="card-content">
+                <h3>Code War</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="openPopup(3)">
+            <img src="Graphics/redimension.jpg" alt="Event 3">
+            <div class="card-content">
+                <h3>Dimension(Autocad)</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" onclick="openPopup(4)">
+            <img src="Graphics/reshort.jpg" alt="Event 4">
+            <div class="card-content">
+                <h3>SHORT FILM</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" onclick="openPopup(5)">
+            <img src="Graphics/regroup.jpg" alt="Event 5">
+            <div class="card-content">
+                <h3>Group Discussion</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card" onclick="openPopup(6)">
+            <img src="Graphics/rerobo.jpg" alt="Event 6">
+            <div class="card-content">
+                <h3>ROBO Combat</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card" onclick="openPopup(7)">
+            <img src="Graphics/rephoto.jpg" alt="Event 7">
+            <div class="card-content">
+                <h3>PIXIFY</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card" onclick="openPopup(8)">
+            <img src="Graphics/retreasure.jpg" alt="Event 8">
+            <div class="card-content">
+                <h3>Treasure Hunt</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card" onclick="openPopup(9)">
+            <img src="Graphics/rebusiness.jpg" alt="Event 9">
+            <div class="card-content">
+                <h3>Business Ideas</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Add more cards as needed -->
+    </div>
+
+    <div id="popup1" class="popup">
+        <button class="popup-close" onclick="closePopup(1)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 1">
+        <h3>Break The Query</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>
+    </div>
+
+    <div id="popup2" class="popup">
+        <button class="popup-close" onclick="closePopup(2)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 2">
+        <h3>Code War</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>    
+    </div>
+
+    <div id="popup3" class="popup">
+        <button class="popup-close" onclick="closePopup(3)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 3">
+        <h3>Dimension(Autocad)</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>
+    </div>
+
+    <div id="popup4" class="popup">
+        <button class="popup-close" onclick="closePopup(4)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 4">
+        <h3>SHORT FILM</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>    
+    </div>
+
+    <div id="popup5" class="popup">
+        <button class="popup-close" onclick="closePopup(5)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 5">
+        <h3>Group Discussion</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>    
+    </div>
+
+    <div id="popup6" class="popup">
+        <button class="popup-close" onclick="closePopup(6)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 6">
+        <h3>ROBO Combat</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>    
+    </div>
+
+    <div id="popup7" class="popup">
+        <button class="popup-close" onclick="closePopup(7)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 7">
+        <h3>PIXIFY</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>    
+    </div>
+
+    <div id="popup8" class="popup">
+        <button class="popup-close" onclick="closePopup(8)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 8">
+        <h3>Treasure Hunt</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>    
+    </div>
+
+    <div id="popup9" class="popup">
+        <button class="popup-close" onclick="closePopup(9)">×</button>
+        <img src="Graphics/podium.jpg" alt="Event 9">
+        <h3>Business Ideas</h3>
+        <p>1st: </p>
+        <p>2nd: </p>
+        <p>3rd: </p>    
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var preloader = document.querySelector('.preloader');
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 2000); // Adjust the time here if needed
+        });
+
+        function openPopup(popupId) {
+            var popup = document.getElementById('popup' + popupId);
+            popup.style.display = 'block';
+        }
+
+        function closePopup(popupId) {
+            var popup = document.getElementById('popup' + popupId);
+            popup.style.display = 'none';
+        }
+
+        function searchEvent() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var cards = document.getElementsByClassName('card');
+            var found = false;
+
+            for (var i = 0; i < cards.length; i++) {
+                var cardContent = cards[i].getElementsByClassName('card-content')[0];
+                var cardText = cardContent.textContent || cardContent.innerText;
+
+                if (cardText.toLowerCase().includes(input)) {
+                    cards[i].classList.add('highlight');
+                    found = true;
+                    cards[i].scrollIntoView({ behavior: "smooth", block: "center" });
+                } else {
+                    cards[i].classList.remove('highlight');
+                }
+            }
+
+            if (!found) {
+                alert('No results found');
+            }
+        }
+    </script>
+</body>
+</html>

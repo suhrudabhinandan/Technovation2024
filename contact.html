@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/elianto" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/nasalization-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ailerons" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/stellar" rel="stylesheet">
+    <title>Contact Us</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background: #121212; /* Dark background */
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+        .contact-title {
+            font-size: 2em;
+            font-family: 'Nasalization';
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+        .contact-info {
+            text-align: center;
+            font-size: 1rem;
+            color: #0f0f0f;
+            font-family: 'Ailerons', sans-serif;
+            width: 90%;
+            max-width: 800px;   
+            margin: 10px auto;
+            margin-bottom: 10%;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.833); /* To ensure readability over the video */
+            border-radius: 10px;
+            flex-direction: column;
+        }
+        .contact-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        .contact-button:hover {
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+        .call-button {
+            color: #211e1e;
+            background: linear-gradient(210deg, #272626, #ffffff);
+        }
+        .call-button:hover {
+            color: #211e1e;
+            background: linear-gradient(90deg, #ffff64, #7bff84);
+        }
+        .email-button {
+            background: linear-gradient(230deg, #ffffff, #272626);
+        }
+        .email-button:hover {
+            background: linear-gradient(230deg, #2638fa, #ff00d9);
+        }
+        .contact-button-text {
+            font-family: 'Ailerons', sans-serif;
+            flex: 1;
+            text-align: left;
+        }
+        .contact-button-icon {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-button-icon img {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" src="Graphics/chatai.mp4" autoplay muted loop></video>
+    
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <div class="contact-title">Contact Us</div>
+        <div class="contact-info">
+            <p>If you have any questions or need more information, feel free to reach out to us.</p>
+        </div>
+        <div class="contact-buttons">
+            <a href="tel:+1234567890" class="contact-button call-button">
+                <span class="contact-button-text">Contact us<br></span>
+                <span class="contact-button-icon">
+                    <img src="Graphics/voice.png" alt="Call Icon">
+                </span>
+            </a>
+            <a href="mailto:technovation4202@gmail.com" class="contact-button email-button">
+                <span class="contact-button-text">Email to us<br></span>
+                <span class="contact-button-icon">
+                    <img src="Graphics/mail.png" alt="Email Icon">
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Rocket.Chat Live Chat Widget -->
+    <script>
+        (function(w, d, s, u) {
+            w.RocketChat = function(c) { w.RocketChat._.push(c) };
+            w.RocketChat._ = [];
+            w.RocketChat.url = u;
+            var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
+            j.async = true; j.src = 'https://livechat.rocket.chat/livechat/rocketchat-livechat.min.js';
+            h.parentNode.insertBefore(j, h);
+        })(window, document, 'script', 'https://your-rocketchat-server.com/livechat');
+    </script>
+
+    <script>
+        // Logging for debugging
+        console.log('Rocket.Chat widget script loaded.');
+        window.addEventListener('load', function() {
+            console.log('Page fully loaded.');
+        });
+    </script>
+</body>
+</html>

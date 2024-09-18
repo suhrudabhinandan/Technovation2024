@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/elianto" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/nasalization-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ailerons" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/stellar" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/obelixpro-2" rel="stylesheet">
+    <title>About Us</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Container for the About Us Page */
+        .about-container {
+            position: relative;
+            height: 100vh;
+            padding: 20px;
+            background-color: #2c2c2c;
+            color: #ffffff;
+        }
+
+        /* Video Background */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* Text Section */
+        .text-section {
+            position: relative;
+            width: 50%;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.616);
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .text-section h1 {
+            font-family: 'Elianto', Arial, Helvetica, sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .text-section p {
+            font-family: 'Stellar', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Hovering Button */
+        .hover-button {
+            position: fixed;
+            font-family: 'ObelixPro', sans-serif;
+            text-decoration: dotted;
+            top: 50%;
+            right: 20px;
+            margin-bottom: 100px;
+            transform: translateY(-50%);
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #ffffff, #ffffff);
+            color: #ff8800;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1;
+            animation: float 1.7s ease-in-out infinite;
+        }
+
+        .hover-button:hover {
+            background-color: #0056b3;
+            transform: scale(2.1) translateY(-50%);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(-50%) translateY(-10px);
+            }
+            50% {
+                transform: translateY(-50%) translateY(10px);
+            }
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            margin: auto;
+            position: relative;
+        }
+        
+        .loader:before {
+            content: '';
+            width: 48px;
+            height: 5px;
+            background: #000;
+            opacity: 0.25;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            border-radius: 50%;
+            animation: shadow 0.5s linear infinite;
+        }
+
+        .loader:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            animation: bxSpin 0.5s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 4px;
+        }
+
+        @keyframes bxSpin {
+            17% {
+                border-bottom-right-radius: 3px;
+            }
+            25% {
+                transform: translateY(9px) rotate(22.5deg);
+            }
+            50% {
+                transform: translateY(18px) scale(1, .9) rotate(45deg);
+                border-bottom-right-radius: 40px;
+            }
+            75% {
+                transform: translateY(9px) rotate(67.5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(90deg);
+            }
+        }
+
+        @keyframes shadow {
+            0%, 100% {
+                transform: scale(1, 1);
+            }
+            50% {
+                transform: scale(1.2, 1);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .text-section {
+                width: 90%;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- Main Content -->
+    <div class="container about-container">
+        <video class="background-video" src="Graphics/AboutUs.mp4" autoplay muted loop></video>
+        <div class="text-section">
+            <h1>About Us</h1>
+            <p>Technovation, hosted at GEC Bhubaneswar every semester, is the ultimate tech-fest celebrating innovation, creativity, and technology. This vibrant event features a diverse range of activities, including coding competitions, hackathons, insightful tech talks, and hands-on workshops.</p>
+            <p>Designed to inspire and challenge, Technovation brings together students, professionals, and tech enthusiasts to explore new ideas and push the boundaries of technology. Whether you’re looking to compete, learn, or simply enjoy the tech-centric festivities, Technovation offers something for everyone. Join us to experience the thrill of innovation and connect with the tech community!</p>
+        </div>
+        <a href="index.html" class="hover-button">Click Here!</a>
+    </div>
+   
+
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('.preloader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
