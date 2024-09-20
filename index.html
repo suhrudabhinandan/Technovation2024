@@ -28,6 +28,7 @@
         <div class="container">
             <nav class="navbar">
                 <a href="logo1.png" class="logo">Technovation</a>
+                <a href="logo1.png" class="logof">Technovation</a>
                 <a href="https://forms.fillout.com/t/mb9rETWfGSus" class="btn-register">Register Now</a>
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span>
@@ -51,6 +52,18 @@
                 </div>
                 <div class="slide">
                     <img src="Graphics/7231564_11932.jpg" alt="Banner 3">
+                </div>
+                <div class="slide">
+                    <img src="Graphics/img1.png" alt="Banner 4">
+                </div>
+                <div class="slide">
+                    <img src="Graphics/img2.jpg" alt="Banner 4">
+                </div>
+                <div class="slide">
+                    <img src="Graphics/img3.jpg" alt="Banner 5">
+                </div>
+                <div class="slide">
+                    <img src="Graphics/img4.jpg" alt="Banner 6">
                 </div>
             </div>
             <div class="hero-content">
@@ -293,12 +306,12 @@
         function showSlides() {
             slides.forEach((slide, index) => {
                 slide.style.opacity = '0';  
-                slide.style.transition = 'opacity 3s ease-in-out';
+                slide.style.transition = 'opacity 0s ease-in-out';
             });
             slideIndex++;
             if (slideIndex > totalSlides) { slideIndex = 1; }    
             slides[slideIndex - 1].style.opacity = '1';  
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            setTimeout(showSlides, 1000); // Change image every 3 seconds
         }
 
         showSlides(); // Initial call
