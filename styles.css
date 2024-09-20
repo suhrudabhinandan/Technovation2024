@@ -76,6 +76,27 @@ body {
     0 0 151px #fff;
 }
 
+@media (max-width: 360px) {
+    .logo {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'Nasalization', sans-serif;
+        text-shadow:
+        0 0 7px #ffffffa9,
+        0 0 10px #ffffffb5,
+        0 0 21px #ffffffbb,
+        0 0 42px #ffd900c9,
+        0 0 82px #ffd900c9,
+        0 0 92px #ffffffc9,
+        0 0 102px #ffffffd0,
+        0 0 151px #fff;
+    }
+    
+
+}
+
 
 
 .btn-register {
@@ -93,6 +114,28 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 360px) {
+    .btn-register {
+        size: 2.5px 5px;
+        background: linear-gradient(270deg, #061f34, #cec8c8);
+        color: #ffffff;
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-family: 'Elianto' sans-serif ;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        margin-left: auto;
+    }
+    
+    .btn-register:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+}
+
 
 /* Hamburger Menu */
 .hamburger {
@@ -115,7 +158,7 @@ body {
     .nav-menu {
         display: none;
         flex-direction: column;
-        width: 30%;
+        width: 10%;
         position: right;
         top: 60px;
         left: 0;
