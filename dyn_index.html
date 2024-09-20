@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technovation - College Event</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dyn_styles.css">
     <link href="https://fonts.cdnfonts.com/css/elianto" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/nasalization-2" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/ailerons" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/stellar" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Nabla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
     
                 
     
@@ -25,15 +28,19 @@
         <div class="container">
             <nav class="navbar">
                 <a href="logo1.png" class="logo">Technovation</a>
-                
-                <ul class="nav-menu">
+                <a href="https://forms.fillout.com/t/mb9rETWfGSus" class="btn-register">Register Now</a>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
                     <li><a href="aboutus.html">About</a></li>
                     <li><a href="#speakers">Speakers</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="result.html">Results</a></li>
                 </ul>
-                <a href="https://forms.fillout.com/t/mb9rETWfGSus" class="btn-register">Register Now</a>
             </nav>
             <div class="hero-slider">
                 <div class="slide">
@@ -235,7 +242,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Technovation. All Rights Reserved.</p>
+            <p>&copy; Technovation | GEC | Bhubaneswar. All Rights Reserved.</p>
             <div class="credits">
                 <p>Developed by: Suhrud Abhinandan | Manish Behera | Ankita Behera </p>
             </div>
@@ -385,6 +392,15 @@
             }
         });
     </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+    
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+    
     
     
    

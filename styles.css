@@ -86,12 +86,60 @@ body {
     text-decoration: none;
     font-family: 'Elianto' sans-serif ;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
+    margin-left: auto;
 }
 
 .btn-register:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* Hamburger Menu */
+.hamburger {
+    display: block;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hamburger .bar {
+    width: 17px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 30%;
+        position: right;
+        top: 60px;
+        left: 0;
+        background-color: #1e1e1e;
+        z-index: 1;
+    }
+
+    .nav-menu.active {
+        display:contents;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+
+
+
 
 /* Hero Section */
 .hero-slider {
