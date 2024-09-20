@@ -28,15 +28,19 @@
         <div class="container">
             <nav class="navbar">
                 <a href="logo1.png" class="logo">Technovation</a>
-                
-                <ul class="nav-menu">
+                <a href="https://forms.fillout.com/t/mb9rETWfGSus" class="btn-register">Register Now</a>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
                     <li><a href="aboutus.html">About</a></li>
                     <li><a href="#speakers">Speakers</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="result.html">Results</a></li>
                 </ul>
-                <a href="https://forms.fillout.com/t/mb9rETWfGSus" class="btn-register">Register Now</a>
             </nav>
             <div class="hero-slider">
                 <div class="slide">
@@ -388,6 +392,15 @@
             }
         });
     </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+    
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+    
     
     
    
