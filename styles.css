@@ -32,7 +32,7 @@ body {
 }
 
 /* Navbar */
-.navbar {
+.navbar {  
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,6 +116,26 @@ body {
         0 0 102px #ffffffd0,
         0 0 151px #fff;
     }
+    .logof {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'Nasalization', sans-serif;
+        margin-left: -205px;
+        
+        text-shadow:
+        0 0 7px #ffffffa9,
+        0 0 10px #ffffffb5,
+        0 0 21px #ffffffbb,
+        0 0 42px #ffd900c9,
+        0 0 82px #ffd900c9,
+        0 0 92px #ffffffc9,
+        0 0 102px #ffffffd0,
+        0 0 151px #fff;
+    
+        animation: flicker 0.3s infinite;
+    }
     
 
 }
@@ -160,6 +180,7 @@ body {
 }
 
 
+
 /* Hamburger Menu */
 .hamburger {
     display: block;
@@ -187,7 +208,7 @@ body {
         left: 200px;
         background-color: #1e1e1ebf;
         border-radius: 10px;
-        z-index: 1;
+        z-index:1;
     }
 
     .nav-menu.active {
@@ -466,7 +487,7 @@ body {
 .events-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color:#ffffff;
+    color: #ffffff;
     background: linear-gradient(178deg, #061f34, #ffffff);
     font-family: 'Ailerons', sans-serif;
     -webkit-background-clip: text;
@@ -498,33 +519,6 @@ body {
     border-radius: 10px;
 }
 
-.btn-event {
-    background: linear-gradient(270deg, #061f34, #cec8c8);
-    color: #ffffff;
-    padding: 6px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: 'Elianto' sans-serif ;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-.btn-event {
-    background: linear-gradient(270deg, #061f34, #cec8c8);
-    color: #ffffff;
-    padding: 6px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: 'Elianto' sans-serif ;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-.btn-event {
-    background: linear-gradient(270deg, #061f34, #cec8c8);
-    color: #ffffff;
-    padding: 6px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: 'Elianto' sans-serif ;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
 .event-card h3 {
     font-size: 1.5rem;
     margin: 10px 0;
@@ -533,9 +527,38 @@ body {
 }
 
 .event-card p {
+    font-family: 'Stellar';
     font-size: 1rem;
     color: #cccccc;
 }
+
+.event-card a {
+    margin-top: 5px;
+}
+
+.event-location, .event-time {
+    font-size: 1rem;
+    color: #cccccc;
+    margin: 5px 0;
+}
+
+.event-location img, .event-time img {
+    width: 15px; /* Adjust icon size as needed */
+    height: 15px;
+    margin-right: 5px;
+    
+}
+
+.btn-event {
+    background: linear-gradient(270deg, #061f34, #cec8c8);
+    color: #ffffff;
+    padding: 6px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Elianto', sans-serif;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
 
 /* Schedule Section */
 .schedule-section {

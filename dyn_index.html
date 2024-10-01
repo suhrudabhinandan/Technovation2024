@@ -28,6 +28,9 @@
         <div class="container">
             <nav class="navbar">
                 <a href="logo1.png" class="logo">Technovation</a>
+                <div class="bulb-animation">
+                    <img src="Graphics/bulb.png" alt="Bulb" class="bulb" />
+                </div>
                 <a href="https://forms.fillout.com/t/mb9rETWfGSus" class="btn-register">Register Now</a>
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span>
@@ -282,7 +285,24 @@
             }, 1500);
         });
     </script>
-    
+    <script>
+        window.onload = () => {
+            const bulb = document.getElementById('bulb');
+        
+            // Start the animation after a short delay
+            setTimeout(() => {
+                bulb.style.top = '200px';  // Position the bulb above the text
+            }, 1000); // Wait 1 second before animation starts
+            
+            // When the bulb reaches the text, make it fall down
+            setTimeout(() => {
+                bulb.style.top = '400px'; // Fall downwards (adjust this value as needed)
+            }, 1500); // Change to whatever time works best for your animation
+        };
+        
+       
+
+    </script>
 
     <script>
         // JavaScript for Smooth Sliding Banner

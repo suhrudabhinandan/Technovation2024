@@ -21,6 +21,29 @@ body {
     padding: 20px;
 }
 
+.bulb-animation {
+    display: inline-block; /* Make sure the bulb is inline with your logo */
+    position: relative;
+}
+
+.bulb {
+    width: 50px; /* Set the size of your bulb */
+    height: auto;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.5;
+        filter: brightness(50%);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(100%);
+    }
+}
+
+
 /* Header */
 .header {
     background-color: #1e1e1e;
